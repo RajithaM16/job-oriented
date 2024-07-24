@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .toggle-header {
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            width: 20%;
+            height: 5%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+
+        .toggle-button {
+            font-size: 24px;
+        }
+
+        .hidden-data {
+            padding: 10px;
+            display: none;
+            color: aquamarine;
+            
+        }
+
+        body {
+            background-image: linear-gradient(rgba(41, 36, 36, 0.5), rgba(41, 38, 38, 0.5)), url("zoho1.jpeg");
+            background-size: cover;
+            height: 350px;
+           
+         
+        }
+
+        h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: rgb(250, 166, 135);
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-header">
+        <h1>Roles in Zoho</h1>
+        <span class="toggle-button">^</span>
+    </div>
+    <div class="hidden-data">
+        <div class="toggle-header">
+            <h2><b>Designer</b></h2>
+            <span class="toggle-button">^</span>
+        </div>
+        <div class="hidden-data">
+            <ul>
+                <li>Ui/ux</li>
+                <li>Graphics</li>
+                <li>visual graphics</li>
+
+            </ul>
+        </div>
+        <div class="toggle-header">
+            <h2><b>web Devoloper</b></h2>
+            <span class="toggle-button">^</span>
+        </div>
+        <div class="hidden-data">
+            <ul>
+                <li>html</li>
+                <li>Css</li>
+                <li>java script</li>
+                <li>react
+                </li>
+                <li>Back end</li>
+            </ul>
+        </div>
+    
+</div>
+
+    <script>
+        const toggleButtons = document.querySelectorAll(".toggle-button");
+        const hiddenData = document.querySelectorAll(".hidden-data");
+
+        for (let i = 0; i < toggleButtons.length; i++) {
+            toggleButtons[i].addEventListener("click", function () {
+                if (hiddenData[i].style.display === "block") {
+                    hiddenData[i].style.display = "none";
+                    toggleButtons[i].textContent = "^";
+                } else {
+                    hiddenData[i].style.display = "block";
+                    toggleButtons[i].textContent = "v";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
